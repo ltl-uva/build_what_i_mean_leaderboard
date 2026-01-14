@@ -100,10 +100,32 @@ jobs:
             )
 
           green_url = green_endpoint + "/.well-known/agent-card.json"
+          project_name = Path.cwd().name
+          network_name = f"{project_name}_agent-network"
           for host in participant_hosts:
             print(f"Checking {host} -> {green_url}")
+            has_curl = subprocess.run(
+              ["docker", "compose", "exec", "-T", host, "sh", "-c", "command -v curl"],
+              check=False,
+            )
+            if has_curl.returncode == 0:
+              subprocess.run(
+                ["docker", "compose", "exec", "-T", host, "curl", "-sf", green_url],
+                check=True,
+              )
+              continue
+
             subprocess.run(
-              ["docker", "compose", "exec", "-T", host, "curl", "-sf", green_url],
+              [
+                "docker",
+                "run",
+                "--rm",
+                "--network",
+                network_name,
+                "curlimages/curl:8.5.0",
+                "-sf",
+                green_url,
+              ],
               check=True,
             )
           PY
