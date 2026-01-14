@@ -26,6 +26,9 @@ jobs:
       - name: Generate docker-compose.yml
         run: python generate_compose.py --scenario scenario.toml
 
+      - name: Show docker-compose.yml
+        run: cat docker-compose.yml
+
       - name: Show a2a-scenario.toml
         run: cat a2a-scenario.toml
 
@@ -132,6 +135,14 @@ jobs:
 
       - name: Run assessment
         run: docker compose up --timestamps --no-color --exit-code-from agentbeats-client --abort-on-container-exit
+
+      - name: Docker Compose debug info
+        if: failure()
+        run: |
+          echo "=== docker compose ps ==="
+          docker compose ps
+          echo "=== docker compose logs (last 200 lines) ==="
+          docker compose logs --tail=200
 
       - name: Record provenance
         run: python record_provenance.py --compose docker-compose.yml --output output/provenance.json
