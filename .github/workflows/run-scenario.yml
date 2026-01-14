@@ -100,25 +100,12 @@ jobs:
             )
 
           green_url = green_endpoint + "/.well-known/agent-card.json"
-          print(f"Checking agentbeats-client -> {green_url}")
-          subprocess.run(
-            [
-              "docker",
-              "compose",
-              "run",
-              "--rm",
-              "--no-deps",
-              "agentbeats-client",
-              "python",
-              "-c",
-              (
-                "import urllib.request as u;"
-                f"u.urlopen('{green_url}').read();"
-                "print('ok')"
-              ),
-            ],
-            check=True,
-          )
+          for host in participant_hosts:
+            print(f"Checking {host} -> {green_url}")
+            subprocess.run(
+              ["docker", "compose", "exec", "-T", host, "curl", "-sf", green_url],
+              check=True,
+            )
           PY
 
       - name: Run assessment
