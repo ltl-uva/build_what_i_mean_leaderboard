@@ -2,8 +2,6 @@ name: Run Scenario
 
 on:
   push:
-    paths:
-      - 'scenario.toml'
 
 jobs:
   run:
