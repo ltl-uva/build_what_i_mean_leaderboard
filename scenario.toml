@@ -1,12 +1,13 @@
 [green_agent]
-agentbeats_id = "https://agentbeats.dev/serjtroshin/pragmatic-builder"
+agentbeats_id = "serjtroshin/pragmatic-builder"
 env = { OPENAI_API_KEY = "${OPENAI_API_KEY}", AGENT_QA_MODE = "openai", AGENT_TRANSCRIPT_DIR = "logs/transcripts" }
 
 [[participants]]
-role = "Rita"
-endpoint = "http://127.0.0.1:9022"
-cmd = "python purple_openai/server.py --host 127.0.0.1 --port 9022"
+name = "rita"
+agentbeats_id = "serjtroshin/pragmatic-builder-purple"
+env = { OPENAI_API_KEY = "${OPENAI_API_KEY}"}
 
 [config]
-"list1_path" = "../data/List1_FINAL_stimuli_list.csv"
-"list2_path" = "../data/List2_FINAL_stimuli_list.csv"
+# data files are baked into the docker image for a demo run
+"list1_path" = "/home/agent/data/List1_FINAL_stimuli_list.csv"
+"list2_path" = "/home/agent/data/List2_FINAL_stimuli_list.csv"

@@ -53,6 +53,7 @@ A2A_SCENARIO_PATH = "a2a-scenario.toml"
 ENV_PATH = ".env.example"
 
 DEFAULT_PORT = 9009
+DEFAULT_PURPLE_PORT = 9018
 DEFAULT_ENV_VARS = {"PYTHONUNBUFFERED": "1"}
 
 COMPOSE_TEMPLATE = """# Auto-generated from scenario.toml
@@ -61,7 +62,6 @@ services:
   green-agent:
     image: {green_image}
     platform: linux/amd64
-    container_name: green-agent
     command: ["--host", "0.0.0.0", "--port", "{green_port}", "--card-url", "http://green-agent:{green_port}"]
     environment:{green_env}
     healthcheck:
@@ -78,7 +78,6 @@ services:
   agentbeats-client:
     image: ghcr.io/agentbeats/agentbeats-client:v1.0.0
     platform: linux/amd64
-    container_name: agentbeats-client
     volumes:
       - ./a2a-scenario.toml:/app/scenario.toml
       - ./output:/app/output
@@ -95,7 +94,6 @@ networks:
 PARTICIPANT_TEMPLATE = """  {name}:
     image: {image}
     platform: linux/amd64
-    container_name: {name}
     command: ["--host", "0.0.0.0", "--port", "{port}", "--card-url", "http://{name}:{port}"]
     environment:{env}
     healthcheck:
@@ -185,7 +183,7 @@ def generate_docker_compose(scenario: dict[str, Any]) -> str:
         PARTICIPANT_TEMPLATE.format(
             name=p["name"],
             image=p["image"],
-            port=DEFAULT_PORT,
+            port=DEFAULT_PURPLE_PORT,
             env=format_env_vars(p.get("env", {}))
         )
         for p in participants
@@ -212,7 +210,7 @@ def generate_a2a_scenario(scenario: dict[str, Any]) -> str:
         lines = [
             f"[[participants]]",
             f"role = \"{p['name']}\"",
-            f"endpoint = \"http://{p['name']}:{DEFAULT_PORT}\"",
+            f"endpoint = \"http://{p['name']}:{DEFAULT_PURPLE_PORT}\"",
         ]
         if "agentbeats_id" in p:
             lines.append(f"agentbeats_id = \"{p['agentbeats_id']}\"")
