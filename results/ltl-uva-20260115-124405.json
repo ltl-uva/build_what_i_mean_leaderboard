@@ -1,0 +1,14 @@
+{
+  "participants": {
+    "rita": "019bbcc5-c0ab-7ff2-ab2e-f45eb3a2ac5d"
+  },
+  "results": [
+    {
+      "status": "ok",
+      "feedback": {
+        "accuracy": 2.5,
+        "avg_questions_per_instruction": 0.0
+      }
+    }
+  ]
+}
