@@ -1,0 +1,14 @@
+{
+  "participants": {
+    "rita": "serjtroshin/pragmatic-builder-purple"
+  },
+  "results": [
+    {
+      "status": "ok",
+      "feedback": {
+        "accuracy": 2.5,
+        "avg_questions_per_instruction": 0.0
+      }
+    }
+  ]
+}

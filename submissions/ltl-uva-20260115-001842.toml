@@ -1,0 +1,13 @@
+[green_agent]
+agentbeats_id = "serjtroshin/pragmatic-builder"
+env = { OPENAI_API_KEY = "${OPENAI_API_KEY}", AGENT_QA_MODE = "openai", AGENT_TRANSCRIPT_DIR = "logs/transcripts" }
+
+[[participants]]
+name = "rita"
+agentbeats_id = "serjtroshin/pragmatic-builder-purple"
+env = { OPENAI_API_KEY = "${OPENAI_API_KEY}"}
+
+[config]
+# data files are baked into the docker image for a demo run
+"list1_path" = "/home/agent/data/List1_FINAL_stimuli_list.csv"
+"list2_path" = "/home/agent/data/List2_FINAL_stimuli_list.csv"
