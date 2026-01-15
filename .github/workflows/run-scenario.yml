@@ -1,7 +1,6 @@
 name: Run Scenario
 
-on:
-  push:
+on: push
 
 jobs:
   run:
