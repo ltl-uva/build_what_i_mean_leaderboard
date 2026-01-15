@@ -26,9 +26,6 @@ jobs:
       - name: Generate docker-compose.yml
         run: python generate_compose.py --scenario scenario.toml
 
-      - name: Show docker-compose.yml
-        run: cat docker-compose.yml
-
       - name: Show a2a-scenario.toml
         run: cat a2a-scenario.toml
 
