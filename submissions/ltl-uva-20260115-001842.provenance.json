@@ -1,0 +1,17 @@
+{
+  "image_digests": {
+    "green-agent": "ghcr.io/ltl-uva/pragmatic_builder_green@sha256:3d4f98b642520a4372f178b10bd8d6dc6cecdb24d4239de181fd7f74192a4ed7",
+    "rita": "ghcr.io/ltl-uva/pragmatic_builder_green-purple@sha256:d1eada7e6a2a5d3bf9609df885dbe3632554b9f7dcf3dae94d744dda54df456f",
+    "agentbeats-client": "ghcr.io/agentbeats/agentbeats-client@sha256:13dfe3ef4e583a80e7ce2fe3becd0ce3b879841368a7f4fa40b6ebbabeeb014e"
+  },
+  "timestamp": "2026-01-15T00:18:42Z",
+  "github_actions": {
+    "run_url": "https://github.com/ltl-uva/pragmatic_builder_leaderboard/actions/runs/21014706129",
+    "run_logs_url": "https://api.github.com/repos/ltl-uva/pragmatic_builder_leaderboard/actions/runs/21014706129/logs",
+    "ref": "refs/heads/test",
+    "sha": "70243fece4775557e4bf0a05fda7b0fc0e19c78b",
+    "repository_url": "https://github.com/ltl-uva/pragmatic_builder_leaderboard",
+    "workflow_ref": "ltl-uva/pragmatic_builder_leaderboard/.github/workflows/run-scenario.yml@refs/heads/test",
+    "workflow_sha": "70243fece4775557e4bf0a05fda7b0fc0e19c78b"
+  }
+}
