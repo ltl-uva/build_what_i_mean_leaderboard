@@ -4,7 +4,7 @@ env = { OPENAI_API_KEY = "${OPENAI_API_KEY}", AGENT_QA_MODE = "openai", AGENT_TR
 
 [[participants]]
 name = "rita"
-agentbeats_id = "serjtroshin/pragmatic-builder-purple"
+agentbeats_id = "019bbcc5-c0ab-7ff2-ab2e-f45eb3a2ac5d"
 env = { OPENAI_API_KEY = "${OPENAI_API_KEY}"}
 
 [config]
