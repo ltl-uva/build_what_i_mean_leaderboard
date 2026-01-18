@@ -1,5 +1,5 @@
 [green_agent]
-agentbeats_id = "serjtroshin/pragmatic-builder"
+agentbeats_id = "serjtroshin/build-what-i-mean"
 env = { OPENAI_API_KEY = "${OPENAI_API_KEY}", AGENT_QA_MODE = "openai", AGENT_TRANSCRIPT_DIR = "logs/transcripts" }
 
 [[participants]]
