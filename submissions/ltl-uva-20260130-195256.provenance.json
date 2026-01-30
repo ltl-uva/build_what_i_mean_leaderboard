@@ -1,0 +1,17 @@
+{
+  "image_digests": {
+    "green-agent": "ghcr.io/ltl-uva/build_what_i_mean@sha256:d105bdedf3914bac41d8bb6ec2ba1708733c3b538dbd33e193339e95db17705a",
+    "rita": "ghcr.io/ltl-uva/build_what_i_mean-purple@sha256:24ab266a8bde8f1862e2c4c1890ec317346a78f7aa796e325a028a9254ba491c",
+    "agentbeats-client": "ghcr.io/agentbeats/agentbeats-client@sha256:13dfe3ef4e583a80e7ce2fe3becd0ce3b879841368a7f4fa40b6ebbabeeb014e"
+  },
+  "timestamp": "2026-01-30T19:52:56Z",
+  "github_actions": {
+    "run_url": "https://github.com/ltl-uva/build_what_i_mean_leaderboard/actions/runs/21528640414",
+    "run_logs_url": "https://api.github.com/repos/ltl-uva/build_what_i_mean_leaderboard/actions/runs/21528640414/logs",
+    "ref": "refs/heads/rerun-20260130-205134",
+    "sha": "b285fcf117c856cbbb44a129532a2fd5b4dec266",
+    "repository_url": "https://github.com/ltl-uva/build_what_i_mean_leaderboard",
+    "workflow_ref": "ltl-uva/build_what_i_mean_leaderboard/.github/workflows/run-scenario.yml@refs/heads/rerun-20260130-205134",
+    "workflow_sha": "b285fcf117c856cbbb44a129532a2fd5b4dec266"
+  }
+}
